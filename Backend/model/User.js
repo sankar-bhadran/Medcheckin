@@ -23,6 +23,31 @@ const Userschema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
+    is_admin: {
+      type: Number,
+      required: true,
+    },
+
+    emailtoken: {
+      type: String,
+    },
+
+    userType: {
+      type: String,
+    },
+
+    is_blocked: {
+      type: Boolean,
+      default: false,
+    },
+
+    addressDetails: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "address",
+      },
+    ],
   }
 
   //  timestamps: true }
